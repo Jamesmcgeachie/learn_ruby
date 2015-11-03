@@ -19,13 +19,24 @@ def translate(input)
 	vowels = ["a", "e", "i", "o", "u"]
 	words = input.split(" ")
 	words.each do |word|
+		was_cap = check_case(word)
+		word.downcase!
 		if vowels.include? word[0]
 			word << "ay"
+			if was_cap == true
+				word.capitalize!
+			end
 		elsif combo_check(word) == true
 			combo_replace(word)
+			if was_cap == true
+				word.capitalize!
+			end
 		else
 			word << "#{word[0]}ay"
 			word.slice!(word[0])
+			if was_cap == true
+				word.capitalize!
+			end
 		end
 	end
 	words.join(" ")
@@ -38,7 +49,7 @@ def combo_check(word)
 			return true
 		end
 	end
-		return false
+	return false
 end
 
 def combo_replace(word)
@@ -51,8 +62,9 @@ def combo_replace(word)
 	end
 end
 
-puts translate('banana')
-
-puts translate('fuck')
-
-puts translate('apple pineapple school')
+def check_case(word)
+	regex = /[A-Z]/
+	if regex.match(word[0])
+		return true
+	end
+end
