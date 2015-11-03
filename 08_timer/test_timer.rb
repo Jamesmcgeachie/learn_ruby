@@ -41,16 +41,16 @@ class TestTimer < MiniTest::Test
   # This helper method would be called by time_string.
   # Uncomment these specs if you want to be tested for this helper method.
   #
-  # padded
-  # def test_pads_zero
-  #    assert_equal '00', @timer.padded(0)
-  # end
+  padded
+  def test_pads_zero
+     assert_equal '00', @timer.padded(0)
+  end
 
-  # def test_pads_one
-  #   assert_equal '01', @timer.padded(1)
-  # end
+  def test_pads_one
+    assert_equal '01', @timer.padded(1)
+  end
 
-  # def test_no_pad_with_two
-  #   assert_equal '12', @timer.padded(12)
-  # end
+  def test_no_pad_with_two
+    assert_equal '12', @timer.padded(12)
+  end
 end

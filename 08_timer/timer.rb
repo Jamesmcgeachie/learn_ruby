@@ -12,4 +12,8 @@ class Timer
 		seconds = (@seconds - ((hours * 3600) + (minutes * 60)))
 		"#{sprintf '%02d', hours}:#{sprintf '%02d', minutes}:#{sprintf '%02d', seconds}"
 	end
+
+	def padded(num)
+		"#{sprintf '%02d', num}"
+	end
 end
