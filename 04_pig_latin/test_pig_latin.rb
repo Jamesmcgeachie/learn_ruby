@@ -58,7 +58,7 @@ class TestPigLatin < MiniTest::Test
   end
 
   def test_translates_multiple_capitals
-    s = translate ("The quick Brown fox")
+    s = translate ("The Quick Brown Fox")
     assert_equal "Ethay Ickquay Ownbray Oxfay", s
   end
 
